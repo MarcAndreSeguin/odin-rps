@@ -12,16 +12,36 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  const RPS = prompt("Rock, paper, scissors? (please type r/p/s) ", "r");
-  switch (RPS) {
-    case 'r':
+  const RPS = prompt("Rock, paper, scissors?", "rock");
+  const RPSLowerCase = RPS.toLowerCase();
+  switch (RPSLowerCase) {
+    case 'rock':
         return 'rock';
-    case 'p':
+    case 'paper':
         return 'paper';
-    case 's':
+    case 'scissors':
         return 'scissors';
+    default:
+        return 'rock';
   }
 }
 
 let humanScore = 0
 let computerScore = 0
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice == computerChoice) {
+    console.log("It's a tie because " + humanChoice + " and " + computerChoice + " is a stalemate.")
+  } else if ((humanChoice == 'rock' && computerChoice == 'scissors') || (humanChoice == 'paper' && computerChoice == 'rock') || (humanChoice == 'scissors' && computerChoice == 'paper')) {
+    console.log("You win because " + humanChoice + " beats " + computerChoice + ".")
+    humanScore++;
+  } else {
+    console.log("You lose because " + computerChoice + " beats " + humanChoice + ".")
+    computerScore++;
+  }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);

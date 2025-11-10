@@ -13,6 +13,21 @@ function getComputerChoice() {
   }
 }
 
-console.log(getComputerChoice())
-console.log(getComputerChoice())
-console.log(getComputerChoice())
+// console.log(getComputerChoice())
+// console.log(getComputerChoice())
+// console.log(getComputerChoice())
+
+function getHumanChoice() {
+  // const prompt = require("prompt-sync")();
+  const RPS = prompt("Rock, paper, scissors? (please type r/p/s) ", "r");
+  switch (RPS) {
+    case 'r':
+        return 'rock';
+    case 'p':
+        return 'paper';
+    case 's':
+        return 'scissors';
+  }
+}
+
+console.log(getHumanChoice())

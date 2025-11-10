@@ -1,5 +1,3 @@
-// console.log("Hello world!")
-
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
   // let computerChoice;
@@ -13,10 +11,6 @@ function getComputerChoice() {
   }
 }
 
-// console.log(getComputerChoice())
-// console.log(getComputerChoice())
-// console.log(getComputerChoice())
-
 function getHumanChoice() {
   const RPS = prompt("Rock, paper, scissors? (please type r/p/s) ", "r");
   switch (RPS) {
@@ -29,4 +23,5 @@ function getHumanChoice() {
   }
 }
 
-console.log(getHumanChoice())
+let humanScore = 0
+let computerScore = 0

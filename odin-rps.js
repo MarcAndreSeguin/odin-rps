@@ -35,7 +35,7 @@ function getHumanChoice() {
 // playRound(humanSelection, computerSelection);
 
 function playGame() {
-  // 5 rounds
+
   let humanScore = 0;
   let computerScore = 0;
 
@@ -65,19 +65,20 @@ function playGame() {
       return 'C';
     }
   }
-
-  for (let i = 0; i < 5; i++){
-        let currentRoundResult;
-        console.log("Round ", i+1)
-        currentRoundResult = playRound(getHumanChoice(),getComputerChoice())
-        if (currentRoundResult == 'C'){
-            computerScore++
-        } else if (currentRoundResult == 'H') {
-            humanScore++
-        }
-        console.log("TALLY -- Human:", humanScore, "Computer:", computerScore)
-        console.log("---")
-    }  
+   
+  // 5 rounds for console-based RPS (w/o UI)
+//   for (let i = 0; i < 5; i++){
+//         let currentRoundResult;
+//         console.log("Round ", i+1)
+//         currentRoundResult = playRound(getHumanChoice(),getComputerChoice())
+//         if (currentRoundResult == 'C'){
+//             computerScore++
+//         } else if (currentRoundResult == 'H') {
+//             humanScore++
+//         }
+//         console.log("TALLY -- Human:", humanScore, "Computer:", computerScore)
+//         console.log("---")
+//     }  
 
 }
 

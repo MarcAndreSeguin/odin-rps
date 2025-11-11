@@ -26,60 +26,34 @@ function getHumanChoice() {
   }
 }
 
-// let humanScore = 0
-// let computerScore = 0
+let humanScore = 0;
+let computerScore = 0;
 
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
+function playRound(humanChoice) {
+  const computerChoice = getComputerChoice();
 
-// playRound(humanSelection, computerSelection);
-
-function playGame() {
-
-  let humanScore = 0;
-  let computerScore = 0;
-
-  function playRound(humanChoice, computerChoice) {
-    if (humanChoice == computerChoice) {
-      console.log(
-        "It's a tie because " +
-          humanChoice +
-          " and " +
-          computerChoice +
-          " is a stalemate."
-      );
-      return 'T';
-    } else if (
-      (humanChoice == "rock" && computerChoice == "scissors") ||
-      (humanChoice == "paper" && computerChoice == "rock") ||
-      (humanChoice == "scissors" && computerChoice == "paper")
-    ) {
-      console.log(
-        "You win because " + humanChoice + " beats " + computerChoice + "."
-      );
-      return 'H';
-    } else {
-      console.log(
-        "You lose because " + computerChoice + " beats " + humanChoice + "."
-      );
-      return 'C';
-    }
+  if (humanChoice == computerChoice) {
+    console.log(
+      "It's a tie because " +
+        humanChoice +
+        " and " +
+        computerChoice +
+        " is a stalemate."
+    );
+    return "T";
+  } else if (
+    (humanChoice == "rock" && computerChoice == "scissors") ||
+    (humanChoice == "paper" && computerChoice == "rock") ||
+    (humanChoice == "scissors" && computerChoice == "paper")
+  ) {
+    console.log(
+      "You win because " + humanChoice + " beats " + computerChoice + "."
+    );
+    return "H";
+  } else {
+    console.log(
+      "You lose because " + computerChoice + " beats " + humanChoice + "."
+    );
+    return "C";
   }
-   
-  // 5 rounds for console-based RPS (w/o UI)
-//   for (let i = 0; i < 5; i++){
-//         let currentRoundResult;
-//         console.log("Round ", i+1)
-//         currentRoundResult = playRound(getHumanChoice(),getComputerChoice())
-//         if (currentRoundResult == 'C'){
-//             computerScore++
-//         } else if (currentRoundResult == 'H') {
-//             humanScore++
-//         }
-//         console.log("TALLY -- Human:", humanScore, "Computer:", computerScore)
-//         console.log("---")
-//     }  
-
 }
-
-// playGame();

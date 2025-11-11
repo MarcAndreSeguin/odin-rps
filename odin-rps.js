@@ -11,21 +11,6 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  const RPS = prompt("Rock, paper, scissors?", "rock");
-  const RPSLowerCase = RPS.toLowerCase();
-  switch (RPSLowerCase) {
-    case "rock":
-      return "rock";
-    case "paper":
-      return "paper";
-    case "scissors":
-      return "scissors";
-    default:
-      return "rock";
-  }
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -40,7 +25,6 @@ function playRound(humanChoice) {
         computerChoice +
         " is a stalemate."
     );
-    return "T";
   } else if (
     (humanChoice == "rock" && computerChoice == "scissors") ||
     (humanChoice == "paper" && computerChoice == "rock") ||
@@ -49,11 +33,20 @@ function playRound(humanChoice) {
     console.log(
       "You win because " + humanChoice + " beats " + computerChoice + "."
     );
-    return "H";
+    humanScore++;
   } else {
     console.log(
       "You lose because " + computerChoice + " beats " + humanChoice + "."
     );
-    return "C";
+    computerScore++;
   }
 }
+
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", playRound("rock"));
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", playRound("paper"));
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", playRound("scissors"));

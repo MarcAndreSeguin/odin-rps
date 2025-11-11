@@ -34,12 +34,17 @@ function playRound(humanChoice) {
       "You win because " + humanChoice + " beats " + computerChoice + "."
     );
     humanScore++;
+    const humanScoreTxt = document.querySelector("#humanScoreTxt");
+    humanScoreTxt.textContent = humanScore;
   } else {
     console.log(
       "You lose because " + computerChoice + " beats " + humanChoice + "."
     );
     computerScore++;
+    const computerScoreTxt = document.querySelector("#computerScoreTxt");
+    computerScoreTxt.textContent = computerScore;
   }
+
 }
 
 const rock = document.querySelector("#rock");

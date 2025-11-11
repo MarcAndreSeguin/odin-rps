@@ -43,10 +43,11 @@ function playRound(humanChoice) {
 }
 
 const rock = document.querySelector("#rock");
-rock.addEventListener("click", playRound("rock"));
+rock.onclick = () => playRound("rock");
 
 const paper = document.querySelector("#paper");
-paper.addEventListener("click", playRound("paper"));
+paper.onclick = () => playRound("paper");
 
 const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", playRound("scissors"));
+scissors.onclick = () => playRound("scissors");
+

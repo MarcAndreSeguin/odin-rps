@@ -74,3 +74,5 @@ paper.onclick = () => playRound("paper");
 const scissors = document.querySelector("#scissors");
 scissors.onclick = () => playRound("scissors");
 
+const reset = document.querySelector("#reset");
+reset.onclick = () => (resetGame(), updateScoreboard());

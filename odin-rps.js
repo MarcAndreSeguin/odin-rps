@@ -13,10 +13,12 @@ function getComputerChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+const humanScoreTxt = document.querySelector("#humanScoreTxt");
+const computerScoreTxt = document.querySelector("#computerScoreTxt");
 
 function playRound(humanChoice) {
   const computerChoice = getComputerChoice();
-
+  
   if (humanChoice == computerChoice) {
     console.log(
       "It's a tie because " +
@@ -34,17 +36,33 @@ function playRound(humanChoice) {
       "You win because " + humanChoice + " beats " + computerChoice + "."
     );
     humanScore++;
-    const humanScoreTxt = document.querySelector("#humanScoreTxt");
-    humanScoreTxt.textContent = humanScore;
   } else {
     console.log(
       "You lose because " + computerChoice + " beats " + humanChoice + "."
     );
     computerScore++;
-    const computerScoreTxt = document.querySelector("#computerScoreTxt");
-    computerScoreTxt.textContent = computerScore;
   }
 
+  if (computerScore == 5) {
+    alert("Computers WINS! (5 rounds) // Game will now reset");
+    resetGame(); 
+  }
+  
+  if (humanScore == 5) {
+    alert("You WIN! (5 rounds) // Game will now reset");
+    resetGame();
+  }
+  updateScoreboard();
+}
+
+function resetGame(){
+    humanScore = 0;
+    computerScore = 0;
+}
+
+function updateScoreboard(){
+    humanScoreTxt.textContent = humanScore;
+    computerScoreTxt.textContent = computerScore;
 }
 
 const rock = document.querySelector("#rock");
